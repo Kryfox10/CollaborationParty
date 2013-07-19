@@ -11,6 +11,7 @@ public class View extends JFrame {
 	private JTextField txtEmail;
 	private JTextField txtNumber;
 	private JButton btnGo;
+	private JTable table;
 	public View() {
 		getContentPane().setLayout(null);
 		
@@ -33,7 +34,7 @@ public class View extends JFrame {
 		scrollPane.setBounds(10, 105, 414, 145);
 		getContentPane().add(scrollPane);
 		
-		JTable table = new JTable();
+		table = new JTable();
 		table.setBounds(22, 240, 373, 145);
 		scrollPane.setViewportView(table);
 		
@@ -52,5 +53,8 @@ public class View extends JFrame {
 	}
 	public JButton getBtnAdd() {
 		return btnGo;
+	}
+	public JTable getTable() {
+		return table;
 	}
 }
