@@ -3,12 +3,14 @@ import javax.swing.JTextField;
 import java.awt.BorderLayout;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
+import javax.swing.JButton;
 
 
 public class View extends JFrame {
 	private JTextField txtName;
 	private JTextField txtEmail;
 	private JTextField txtNumber;
+	private JButton btnGo;
 	public View() {
 		getContentPane().setLayout(null);
 		
@@ -34,6 +36,10 @@ public class View extends JFrame {
 		JTable table = new JTable();
 		table.setBounds(22, 240, 373, 145);
 		scrollPane.setViewportView(table);
+		
+		btnGo = new JButton("Go!");
+		btnGo.setBounds(321, 71, 89, 23);
+		getContentPane().add(btnGo);
 	}
 	public JTextField getTxtName() {
 		return txtName;
@@ -43,5 +49,8 @@ public class View extends JFrame {
 	}
 	public JTextField getTxtNumber() {
 		return txtNumber;
+	}
+	public JButton getBtnAdd() {
+		return btnGo;
 	}
 }
