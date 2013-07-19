@@ -1,7 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -18,18 +17,19 @@ public class Controller {
 	public Controller() {
 		
 		view = new View();
-
-		view.getTable().setModel(new DefaultTableModel());
+		view.setVisible(true);
+		
+		view.getTable().setModel(new DefaultTableModel(new Object[][] {}, new Object[] {"Name", "Email", "Number"}));
 		
 		view.getBtnAdd().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				
 				String name = view.getTxtName().getText();
-				String number = view.getTxtNumber().getText();
 				String email = view.getTxtEmail().getText();
+				String number = view.getTxtNumber().getText();
 				
-				DefaultTableModel model = view.getTable().getModel();
-				model.addRow(new Object[] {name, number, email});
+				DefaultTableModel model = (DefaultTableModel)view.getTable().getModel();
+				model.addRow(new Object[] {name, email, number});
 				
 			}
 		});
